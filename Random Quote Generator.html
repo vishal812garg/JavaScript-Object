@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Convertor</title>
+</head>
+     <link rel="stylesheet" href="Quote Generator.css">
+<body>
+     <div id="main">
+                <h1>Get Your Daily Quote</h1>
+           <div id="pcontainer">
+                <p id="p1"></p>
+                <p id="p2"></p>   
+          </div>
+          <div id="buttoncontainer">
+                <button type="button" id="quotebutton" onclick="Quote()">Click Me</button>
+          </div>
+     </div> 
+
+
+
+
+  <script>
+    var quotesource = [
+      {quote:"The Future Depends on What You do Today.",
+       name:"Mahatma Gandhi" },
+       {quote:"When mind is still,then truth gets her chance to be heard in the purity of the silence.",
+        name:"Sri Aurobindo"},
+       {quote:"One individual may die for an idea,but that idea will,after his death,Incarnate itself in a thousand Lives.",
+        name:"Netaji Subhas Chandra Bose"},
+       {quote:"Children do not think of differences amongst themselves.",
+        name:"Jawahar Lal Nehru"},
+       {quote:"Religion is a metter between the man and his Maker.",
+        name:"Sardar Patel"}
+    ];
+
+
+    let quotebutton = document.getElementById('quotebutton');
+    
+    function Quote(){
+      var sourcelenght = quotesource.length;
+      var randomnumber = Math.floor(Math.random() * sourcelenght);
+
+
+      var newquote = quotesource[randomnumber].quote;
+      var newname = quotesource[randomnumber].name;
+      var pcontainer = document.getElementById('pcontainer');
+        pcontainer.innerHTML = `<p id="p1">${newquote}</p><p id="p2">- - -${newname}</p>`;       
+    };  
+
+  </script>
+</body>
+</html>      
